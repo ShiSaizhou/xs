@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>我不是戏神 - 小说详情介绍</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-serif leading-relaxed overflow-x-hidden">
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+    
+    <!-- 顶部导航 -->
+    <nav class="sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 bg-black border-b border-gray-800">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="logo.svg" alt="戏神标志" class="h-8 w-8 animate-pulse">
+                <span class="text-xl font-bold tracking-wider font-geist-mono">我不是戏神</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#overview" class="hover:text-red-400 transition-colors duration-300">小说概述</a>
+                <a href="#chapter1" class="hover:text-red-400 transition-colors duration-300">戏中人</a>
+                <a href="#chapter2" class="hover:text-red-400 transition-colors duration-300">绘朱颜</a>
+                <a href="#chapter3" class="hover:text-red-400 transition-colors duration-300">祭神舞</a>
+                <a href="#chapter4" class="hover:text-red-400 transition-colors duration-300">嘲歌行</a>
+                <a href="#characters" class="hover:text-red-400 transition-colors duration-300">角色介绍</a>
+            </div>
+            <button id="menuToggle" class="md:hidden flex items-center justify-center">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden px-4 py-3 border-t border-gray-800 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#overview" class="hover:text-red-400 transition-colors duration-300">小说概述</a>
+                <a href="#chapter1" class="hover:text-red-400 transition-colors duration-300">戏中人</a>
+                <a href="#chapter2" class="hover:text-red-400 transition-colors duration-300">绘朱颜</a>
+                <a href="#chapter3" class="hover:text-red-400 transition-colors duration-300">祭神舞</a>
+                <a href="#chapter4" class="hover:text-red-400 transition-colors duration-300">嘲歌行</a>
+                <a href="#characters" class="hover:text-red-400 transition-colors duration-300">角色介绍</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区块 -->
+    <header class="relative flex items-center justify-center min-h-screen overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="hero-gradient absolute inset-0 opacity-70"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl animate__animated animate__fadeIn">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">我不是戏神</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">在赤色流星划过天际后，人类文明停滞，科技倒退的灰暗世界中，一位戏子在文明的废墟上张开双臂……</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button id="startReadingBtn" class="px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 rounded-md hover:from-red-700 hover:to-red-900 transition-all duration-300 shadow-lg hover:shadow-red-700/30 focus:outline-none transform hover:-translate-y-1">
+                    开始阅读
+                </button>
+                <button id="exploreCharactersBtn" class="px-8 py-3 bg-transparent border border-white/30 rounded-md hover:bg-white/10 transition-all duration-300 focus:outline-none transform hover:-translate-y-1">
+                    探索角色
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-10 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white/70"></i>
+        </div>
+    </header>
+
+    <!-- 小说概述 -->
+    <section id="overview" class="py-20 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 inline-block relative">
+                    <span class="relative z-10">小说概述</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-transparent"></span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">《我不是戏神》是三九音域创作的一部都市异能小说，情节扣人心弦，设定奇妙宏大。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-gradient-to-br from-gray-900 to-black p-6 rounded-lg shadow-xl border border-gray-800 transform transition-transform duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">世界观设定</h3>
+                    <p class="mb-4 text-gray-300">故事设定在赤色流星划过天际后，人类文明停滞、科技倒退的灰暗世界。在这个人命如草芥的时代，灰色的世界像镜面后的鬼魅倒影，将文明世界拖入无序深渊。</p>
+                    <p class="text-gray-300">在这样的时代背景下，一个戏子在文明废墟之上，张开双臂，预示着一场好戏即将开场。</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-900 to-black p-6 rounded-lg shadow-xl border border-gray-800 transform transition-transform duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">小说架构</h3>
+                    <p class="mb-4 text-gray-300">《我不是戏神》分为四卷：《戏中人》、《绘朱颜》、《祭神舞》和《嘲歌行》。前三卷已完结，第四卷正在连载中。</p>
+                    <p class="text-gray-300">故事从主角陈伶的视角展开，讲述他如何在这个充满挑战和危险的世界中生存和奋斗，探索自己的身份与命运。</p>
+                </div>
+            </div>
+            
+            <div class="mt-10 bg-gradient-to-br from-gray-900 to-black p-6 rounded-lg shadow-xl border border-gray-800">
+                <h3 class="text-2xl font-bold mb-4 text-red-400">核心主题</h3>
+                <ul class="grid md:grid-cols-2 gap-4">
+                    <li class="flex items-start space-x-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                        <span>文明与毁灭：赤色流星带来的文明停滞象征着人类对自身发展的反思</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                        <span>个体与命运：陈伶从普通人到灭世灾厄的转变展示了个体如何与宿命抗争</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                        <span>艺术的力量：戏神道能力象征着艺术和表演如何塑造现实、改变世界</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                        <span>身份与本质：多重身份的陈伶不断探索"我是谁"的终极问题</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一卷：戏中人 -->
+    <section id="chapter1" class="py-20 px-4 chapter-section bg-gradient-to-b from-black to-red-950">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <span class="inline-block py-1 px-3 text-sm bg-red-800 bg-opacity-50 rounded-full mb-3">第一卷</span>
+                <h2 class="text-4xl font-bold mb-6 relative inline-block">
+                    <span class="relative z-10">戏中人</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-transparent"></span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-3 animate__animated" data-animate="animate__fadeInLeft">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-4 text-red-300">故事概要</h3>
+                        <p class="mb-4 text-gray-200">第一卷主要讲述了普通上班族陈伶卷入神秘世界的开端。在2024年8月8日，演员陈伶在地震中被砸死，醒来后发现自己穿越到了一个奇怪的世界。</p>
+                        <p class="mb-4 text-gray-200">在这个世界中，赤色流星划过天际后，世界文明倒退，科技停滞。陈伶发现自己拥有特殊的"戏神道"能力，并在探索身份过程中，发现自己实际上是灭世级灾厄【嘲灾】个体，拥有"穿越者陈伶记忆"。</p>
+                        <p class="text-gray-200">在这一卷中，陈伶初步掌握【无相】和【猩红戏法】等能力，开始理解这个灰暗世界的规则。他加入了目标为"逆转时代，重启世界"的组织黄昏社，成为代号"红心6"的成员。陈伶在文明废墟上开始了自己的表演，如同一个戏子，时而欢笑时而哭泣，向世界宣告："好戏……开场。"</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-red-300">关键剧情</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-red-900 bg-opacity-20 rounded-lg border border-red-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">穿越与觉醒</h4>
+                                <p>陈伶发现自己在地震中死亡后穿越到一个陌生世界，逐渐觉醒自己的特殊能力和身份。</p>
+                            </div>
+                            <div class="p-4 bg-red-900 bg-opacity-20 rounded-lg border border-red-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">黄昏社的招募</h4>
+                                <p>因其特殊的戏神道能力，陈伶被神秘组织黄昏社招募，成为代号"红心6"的成员。</p>
+                            </div>
+                            <div class="p-4 bg-red-900 bg-opacity-20 rounded-lg border border-red-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">能力初显</h4>
+                                <p>陈伶开始掌握【无相】和【猩红戏法】，在危机中初显身手，让人们开始关注这位神秘的戏子。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2 animate__animated" data-animate="animate__fadeInRight">
+                    <div class="quotes-container sticky top-32 bg-gradient-to-br from-red-900/30 to-black p-6 rounded-lg border border-red-800/30">
+                        <h3 class="text-2xl font-bold mb-4 text-center text-red-300">经典语录</h3>
+                        <div class="quotes-carousel">
+                            <div class="quote-item text-center py-4">
+                                <p class="italic mb-3 text-lg">"这个时代人类渺小如尘埃，这个时代人类璀璨如星辰"</p>
+                                <div class="w-12 h-0.5 bg-red-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"在这灰色的世界里，每个人都是自己戏剧的主角"</p>
+                                <div class="w-12 h-0.5 bg-red-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"我扮演众生，却不知谁在扮演我"</p>
+                                <div class="w-12 h-0.5 bg-red-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"红帔如血，戏如人生，人生如戏"</p>
+                                <div class="w-12 h-0.5 bg-red-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"戏中有真，真中有戏，何为虚妄，何为真实"</p>
+                                <div class="w-12 h-0.5 bg-red-500 mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center space-x-2 mt-4">
+                            <button class="quotes-prev p-2 rounded-full bg-red-900/30 hover:bg-red-800/50 transition-colors">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            <button class="quotes-next p-2 rounded-full bg-red-900/30 hover:bg-red-800/50 transition-colors">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二卷：绘朱颜 -->
+    <section id="chapter2" class="py-20 px-4 chapter-section bg-gradient-to-b from-red-950 to-purple-950">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <span class="inline-block py-1 px-3 text-sm bg-purple-800 bg-opacity-50 rounded-full mb-3">第二卷</span>
+                <h2 class="text-4xl font-bold mb-6 relative inline-block">
+                    <span class="relative z-10">绘朱颜</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-transparent"></span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-2 animate__animated" data-animate="animate__fadeInLeft">
+                    <div class="quotes-container sticky top-32 bg-gradient-to-br from-purple-900/30 to-black p-6 rounded-lg border border-purple-800/30">
+                        <h3 class="text-2xl font-bold mb-4 text-center text-purple-300">经典语录</h3>
+                        <div class="quotes-carousel">
+                            <div class="quote-item text-center py-4">
+                                <p class="italic mb-3 text-lg">"没有人的命是贱的…就算是在肮脏的土壤；也可能盛开出璀璨的玫瑰"</p>
+                                <div class="w-12 h-0.5 bg-purple-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"面具之下是真实，还是另一张面具？"</p>
+                                <div class="w-12 h-0.5 bg-purple-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"我描绘众生面容，实则勾勒自己灵魂"</p>
+                                <div class="w-12 h-0.5 bg-purple-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"即使身处深渊，我也要以戏法点亮黑暗"</p>
+                                <div class="w-12 h-0.5 bg-purple-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"生而为人，我很抱歉；活着就是，我的反抗"</p>
+                                <div class="w-12 h-0.5 bg-purple-500 mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center space-x-2 mt-4">
+                            <button class="quotes-prev p-2 rounded-full bg-purple-900/30 hover:bg-purple-800/50 transition-colors">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            <button class="quotes-next p-2 rounded-full bg-purple-900/30 hover:bg-purple-800/50 transition-colors">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3 animate__animated" data-animate="animate__fadeInRight">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-300">故事概要</h3>
+                        <p class="mb-4 text-gray-200">第二卷
+<div class="mb-4 text-gray-200">第二卷中，陈伶深入探索戏神道的奥秘，进一步掌握【织命】和【卡】等高级技能。"绘朱颜"暗示陈伶开始能够通过戏法"塑造"和"改变"他人命运。他不再只是被动接受命运，而是开始主动介入和改变世界。</p>
+                        <p class="mb-4 text-gray-200">在这一阶段，陈伶开始探索多个界域，包括天枢界域、红尘界域等，遇到了重要人物韩蒙，并与各方势力产生初步冲突。他逐渐了解到更多关于十八通神大道的秘密，以及灭世灾厄的本质，开始质疑自己的存在意义和使命。</p>
+                        <p class="text-gray-200">随着能力的增强，陈伶面临的挑战也越来越大，他不得不在各方势力的博弈中找到自己的立场，同时保持自己的初心和对真相的探索。</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-300">关键剧情</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-purple-900 bg-opacity-20 rounded-lg border border-purple-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">能力进阶</h4>
+                                <p>陈伶掌握了【织命】和【卡】等高级技能，这些能力让他能够更深入地介入和改变现实。</p>
+                            </div>
+                            <div class="p-4 bg-purple-900 bg-opacity-20 rounded-lg border border-purple-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">界域探索</h4>
+                                <p>陈伶开始探索天枢界域、红尘界域等多个神秘区域，每一个界域都有其独特的规则和危险。</p>
+                            </div>
+                            <div class="p-4 bg-purple-900 bg-opacity-20 rounded-lg border border-purple-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">重要相遇</h4>
+                                <p>陈伶与韩蒙相遇，这位兵神道【审判】路径现任魁首的出现，为故事带来了新的维度和可能性。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三卷：祭神舞 -->
+    <section id="chapter3" class="py-20 px-4 chapter-section bg-gradient-to-b from-purple-950 to-blue-950">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <span class="inline-block py-1 px-3 text-sm bg-blue-800 bg-opacity-50 rounded-full mb-3">第三卷</span>
+                <h2 class="text-4xl font-bold mb-6 relative inline-block">
+                    <span class="relative z-10">祭神舞</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-transparent"></span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-3 animate__animated" data-animate="animate__fadeInLeft">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">故事概要</h3>
+                        <p class="mb-4 text-gray-200">到了第三卷，陈伶的能力达到了新的高度。"祭神舞"暗示他开始能够挑战更高层次的力量和规则。在这一卷中，陈伶与另一个重要角色夭（三区陈伶）产生交集，后者是巫神道天才，帮助陈伶通过神寂之地重返舞台，并因此恢复灵魂。</p>
+                        <p class="mb-4 text-gray-200">陈伶与绛天教、篡火者等主要势力的冲突升级，揭露了更多关于赤色流星和人类文明停滞的真相。他开始意识到自己作为【嘲灾】的使命，不仅是毁灭，也可能是重建。在这一阶段，陈伶的表演不再只是为了生存，而是成为了改变世界的力量。</p>
+                        <p class="text-gray-200">随着陈伶的能力和影响力不断扩大，各方势力开始将目光聚焦于他，既有想要利用他的，也有试图阻止他的。在这场权力的游戏中，陈伶必须找到自己的道路。</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-blue-300">关键剧情</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">与夭的相遇</h4>
+                                <p>陈伶与巫神道天才夭（三区陈伶）相遇，后者帮助他通过神寂之地重返舞台，同时恢复了自己的灵魂。</p>
+                            </div>
+                            <div class="p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">势力冲突</h4>
+                                <p>陈伶与绛天教、篡火者等主要势力的冲突升级，各方为了各自的目的展开激烈博弈。</p>
+                            </div>
+                            <div class="p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">真相揭露</h4>
+                                <p>更多关于赤色流星和人类文明停滞的真相被揭露，陈伶开始意识到自己作为【嘲灾】的真正使命。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2 animate__animated" data-animate="animate__fadeInRight">
+                    <div class="quotes-container sticky top-32 bg-gradient-to-br from-blue-900/30 to-black p-6 rounded-lg border border-blue-800/30">
+                        <h3 class="text-2xl font-bold mb-4 text-center text-blue-300">经典语录</h3>
+                        <div class="quotes-carousel">
+                            <div class="quote-item text-center py-4">
+                                <p class="italic mb-3 text-lg">"我舞蹈，天地为之倾覆；我沉默，万物归于寂静"</p>
+                                <div class="w-12 h-0.5 bg-blue-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"戏神之道，不在于模仿生活，而在于创造现实"</p>
+                                <div class="w-12 h-0.5 bg-blue-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"当我站在舞台中央，我即是神，也是魔"</p>
+                                <div class="w-12 h-0.5 bg-blue-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"献祭的不是生命，而是执念"</p>
+                                <div class="w-12 h-0.5 bg-blue-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"人类的伟大不在于强大，而在于面对衰落时的尊严"</p>
+                                <div class="w-12 h-0.5 bg-blue-500 mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center space-x-2 mt-4">
+                            <button class="quotes-prev p-2 rounded-full bg-blue-900/30 hover:bg-blue-800/50 transition-colors">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            <button class="quotes-next p-2 rounded-full bg-blue-900/30 hover:bg-blue-800/50 transition-colors">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四卷：嘲歌行 -->
+    <section id="chapter4" class="py-20 px-4 chapter-section bg-gradient-to-b from-blue-950 to-emerald-950">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <span class="inline-block py-1 px-3 text-sm bg-emerald-800 bg-opacity-50 rounded-full mb-3">第四卷 (连载中)</span>
+                <h2 class="text-4xl font-bold mb-6 relative inline-block">
+                    <span class="relative z-10">嘲歌行</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-transparent"></span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-2 animate__animated" data-animate="animate__fadeInLeft">
+                    <div class="quotes-container sticky top-32 bg-gradient-to-br from-emerald-900/30 to-black p-6 rounded-lg border border-emerald-800/30">
+                        <h3 class="text-2xl font-bold mb-4 text-center text-emerald-300">经典语录</h3>
+                        <div class="quotes-carousel">
+                            <div class="quote-item text-center py-4">
+                                <p class="italic mb-3 text-lg">"我以嘲讽为武器，以歌声为利刃，切开这腐朽的世界"</p>
+                                <div class="w-12 h-0.5 bg-emerald-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"当所有的神都陨落，我们就成了自己的神"</p>
+                                <div class="w-12 h-0.5 bg-emerald-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"毁灭不是终点，而是重生的开始"</p>
+                                <div class="w-12 h-0.5 bg-emerald-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"我不是戏神，我只是一个不甘沉沦的普通人"</p>
+                                <div class="w-12 h-0.5 bg-emerald-500 mx-auto"></div>
+                            </div>
+                            <div class="quote-item text-center py-4 hidden">
+                                <p class="italic mb-3 text-lg">"在这个时代的尽头，我看到了另一个时代的黎明"</p>
+                                <div class="w-12 h-0.5 bg-emerald-500 mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center space-x-2 mt-4">
+                            <button class="quotes-prev p-2 rounded-full bg-emerald-900/30 hover:bg-emerald-800/50 transition-colors">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            <button class="quotes-next p-2 rounded-full bg-emerald-900/30 hover:bg-emerald-800/50 transition-colors">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3 animate__animated" data-animate="animate__fadeInRight">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-300">故事概要</h3>
+                        <p class="mb-4 text-gray-200">第四卷"嘲歌行"中，陈伶开始运用自己作为【嘲灾】的全部力量，试图实现"逆转时代，重启世界"的宏大目标。他与本土陈伶的弟弟陈宴（戏神道天才但未入道）有了更多互动，二人的关系和能力互补可能成为改变世界的关键。</p>
+                        <p class="mb-4 text-gray-200">作为黄金会特使和记者林宴的陈伶，开始直面九大界域的核心秘密，挑战整个世界的规则和秩序。赤色流星的真相、灭世灾厄的使命、人类文明的未来走向，都将在这一卷中逐步揭晓。陈伶的"嘲歌"不仅是对这个衰败世界的讽刺，也是对新希望的呼唤。</p>
+                        <p class="text-gray-200">在这最终的篇章里，所有的线索将汇聚一处，陈伶将面临最终的抉择和挑战，他的决定将决定这个世界的命运。</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-emerald-300">关键剧情</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-emerald-900 bg-opacity-20 rounded-lg border border-emerald-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">力量全开</h4>
+                                <p>陈伶开始运用自己作为【嘲灾】的全部力量，试图实现"逆转时代，重启世界"的宏大目标。</p>
+                            </div>
+                            <div class="p-4 bg-emerald-900 bg-opacity-20 rounded-lg border border-emerald-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">与陈宴互动</h4>
+                                <p>陈伶与本土陈伶的弟弟陈宴（戏神道天才但未入道）有了更多互动，二人的关系可能成为改变世界的关键。</p>
+                            </div>
+                            <div class="p-4 bg-emerald-900 bg-opacity-20 rounded-lg border border-emerald-800 border-opacity-30">
+                                <h4 class="font-bold mb-2">最终真相</h4>
+                                <p>赤色流星的真相、灭世灾厄的使命、人类文明的未来走向，都将在这一卷中逐步揭晓。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 角色介绍 -->
+    <section id="characters" class="py-20 px-4 bg-gradient-to-b from-emerald-950 to-black">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <h2 class="text-4xl font-bold mb-6 relative inline-block">
+                    <span class="relative z-10">角色介绍</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-white to-transparent"></span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">《我不是戏神》中的人物形象丰满立体，每个角色都有其独特的背景、动机和成长轨迹。</p>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item mb-6 border border-gray-800 rounded-lg overflow-hidden animate__animated" data-animate="animate__fadeIn">
+                    <div class="accordion-header flex items-center justify-between p-4 bg-gradient-to-r from-gray-900 to-black cursor-pointer">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-4">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">陈伶 (Chén Líng)</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content hidden bg-gray-900 p-6">
+                        <p class="mb-4">男主角。表面上是赤色流星后末日废土中的一名戏子，实际上是拥有"穿越者陈伶记忆"的灭世级灾厄【嘲灾】个体。</p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-bold mb-2 text-red-400">身份</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>黄昏社成员"红心6"</li>
+                                    <li>记者林宴</li>
+                                    <li>黄金会特使</li>
+                                    <li>灭世级灾厄【嘲灾】个体</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-red-400">能力</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>【无相】- 可以模仿他人的外表和声音</li>
+                                    <li>【猩红戏法】- 强大的攻击性戏法</li>
+                                    <li>【织命】- 能够一定程度影响他人命运</li>
+                                    <li>【卡】- 高级控制技能</li>
+                                    <li>灾厄化 - 作为【嘲灾】的特殊能力</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>陈伶在文明废墟上试图通过"表演"改变世界，并探索自身存在的真相。他既是演员，也是观众；既是毁灭者，也可能是救赎者。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-6 border border-gray-800 rounded-lg overflow-hidden animate__animated" data-animate="animate__fadeIn" data-delay="200">
+                    <div class="accordion-header flex items-center justify-between p-4 bg-gradient-to-r from-gray-900 to-black cursor-pointer">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center mr-4">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">夭 (Yāo) / 三区陈伶</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content hidden bg-gray-900 p-6">
+                        <p class="mb-4">巫神道天才。来自第三区，是另一位"陈伶"。</p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-bold mb-2 text-purple-400">身份</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>第三区居民</li>
+                                    <li>巫神道天才</li>
+                                    <li>另一个"陈伶"</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-purple-400">关键事件</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>通过神寂之地帮助主角陈伶重返舞台</li>
+                                    <li>在此过程中恢复了自己的灵魂</li>
+                                    <li>化作【绘朱颜】第二笔的牺牲</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>夭是主角陈伶成长和理解世界过程中的重要助力，她的牺牲和奉献为陈伶的旅程提供了关键的支持和指引。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-6 border border-gray-800 rounded-lg overflow-hidden animate__animated" data-animate="animate__fadeIn" data-delay="400">
+                    <div class="accordion-header flex items-center justify-between p-4 bg-gradient-to-r from-gray-900 to-black cursor-pointer">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-4">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">陈宴 (Chén Yàn)</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content hidden bg-gray-900 p-6">
+                        <p class="mb-4">戏神道天才，但尚未正式入道。是本土（非穿越者/灾厄）陈伶的弟弟。</p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-bold mb-2 text-blue-400">身份</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>本土陈伶的弟弟</li>
+                                    <li>红王的徒弟</li>
+                                    <li>戏神道天才（未入道）</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-blue-400">关键事件</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>为了哥哥的健康而牺牲了自己的心脏</li>
+                                    <li>后以不明状态出现</li>
+                                    <li>帮助陈伶连接戏神道</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>在故事后期与主角陈伶产生交集，他的天赋和立场可能对剧情走向产生重要影响。陈宴的存在提供了一个关于"本我"和"他者"的哲学思考。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-6 border border-gray-800 rounded-lg overflow-hidden animate__animated" data-animate="animate__fadeIn" data-delay="600">
+                    <div class="accordion-header flex items-center justify-between p-4 bg-gradient-to-r from-gray-900 to-black cursor-pointer">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-4">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">韩蒙 (Hán Méng)</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content hidden bg-gray-900 p-6">
+                        <p class="mb-4">兵神道【审判】路径现任魁首，原是第三区总执法长。</p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-bold mb-2 text-yellow-400">身份</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>兵神道【审判】路径现任魁首</li>
+                                    <li>第三区总执法长</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-yellow-400">特点</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>拥有坚定的正义理念</li>
+                                    <li>与陈伶惺惺相惜</li>
+                                    <li>在混乱世界中寻求秩序的守护者</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>韩蒙是主要角色之一，在故事中与主角陈伶相遇，共同在充满挑战和危险的世界中探索、成长和奋斗。他的正义感和力量为陈伶提供了重要支持。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-6 border border-gray-800 rounded-lg overflow-hidden animate__animated" data-animate="animate__fadeIn" data-delay="800">
+                    <div class="accordion-header flex items-center justify-between p-4 bg-gradient-to-r from-gray-900 to-black cursor-pointer">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-4">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">红王 (Hóng Wáng)</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content hidden bg-gray-900 p-6">
+                        <p class="mb-4">黄昏社的两王之一，戏神道魁首九阶半神。</p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <h4 class="font-bold mb-2 text-green-400">身份</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>黄昏社的两王之一</li>
+                                    <li>戏神道魁首</li>
+                                    <li>九阶半神</li>
+                                    <li>陈宴的师父</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 text-green-400">特点</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>居住在戏道古藏</li>
+                                    <li>实力强大且神秘</li>
+                                    <li>对陈伶的身份有所了解</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>作为陈宴的师父和戏神道的魁首，红王在故事中扮演着关键角色。他的存在关联到许多势力和过去的秘密，对理解整个世界的背景和陈伶的使命至关重要。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 阅读推荐 -->
+    <section class="py-20 px-4 bg-black">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 relative inline-block">
+                    <span class="relative z-10">开始阅读</span>
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-white to-transparent"></span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">准备好踏上这场惊心动魄的旅程了吗？现在就开始阅读《我不是戏神》，探索这个奇妙而危险的世界！</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-gray-900 to-black p-8 rounded-lg shadow-xl border border-gray-800 text-center">
+                <h3 class="text-2xl font-bold mb-6 text-white">在以下平台阅读</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <a href="https://fanqienovel.com/page/7373111164982773771" target="_blank" class="p-4 bg-black bg-opacity-50 rounded-lg border border-gray-700 hover:border-red-500 transition-colors flex flex-col items-center justify-center h-32">
+                        <i data-lucide="book-open" class="w-10 h-10 mb-3 text-red-500"></i>
+                        <span class="font-bold">番茄小说</span>
+                    </a>
+                    <a href="#" class="p-4 bg-black bg-opacity-50 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors flex flex-col items-center justify-center h-32">
+                        <i data-lucide="smartphone" class="w-10 h-10 mb-3 text-blue-500"></i>
+                        <span class="font-bold">官方App</span>
+                    </a>
+                    <a href="#" class="p-4 bg-black bg-opacity-50 rounded-lg border border-gray-700 hover:border-green-500 transition-colors flex flex-col items-center justify-center h-32">
+                        <i data-lucide="bookmark" class="w-10 h-10 mb-3 text-green-500"></i>
+                        <span class="font-bold">收藏本书</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="py-8 px-4 border-t border-gray-800 bg-black">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <img src="logo.svg" alt="戏神标志" class="h-6 w-6">
+                        <span class="text-lg font-bold">我不是戏神</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">© 2023 三九音域. 保留所有权利.</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-gray-500">Built with <a href="https://flowith.net" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">Flowith Oracle</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-red-600 rounded-full shadow-lg z-50 opacity-0 invisible transition-all">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="particles.js"></script>
+    <script src="characters.js"></script>
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("wheel", (e)=> {
+            const isPinching = e.ctrlKey
+            if(isPinching) e.preventDefault()
+        }, { passive: false })
+    </script>
+</body>
+</html>
