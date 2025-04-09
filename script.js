@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // 开始阅读和探索角色按钮
     document.getElementById('startReadingBtn').addEventListener('click', function() {
-        window.open('https://fanqienovel.com/page/7373111164982773771', '_blank');
+        window.open('https://fanqienovel.com/page/7276384138653862966', '_blank');
     });
     
     document.getElementById('exploreCharactersBtn').addEventListener('click', function() {
